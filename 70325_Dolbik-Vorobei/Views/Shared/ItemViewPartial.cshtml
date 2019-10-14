@@ -1,0 +1,37 @@
+﻿@model _70325_Dolbik_Vorobei.DAL.Dish
+<div class='col-md-4'>
+    <div class='thumbnail'>
+        <img height="200"
+             src="@Url.Action("getImage",
+                 new
+                 {
+                     id = Model.DishId
+                 })"
+             alt='NoImage'
+             class="img-thumbnail"/>
+        <div class="caption">
+            <div class="item-name">
+                <h3>@Model.DishName</h3>
+            </div>
+            <div class="item-description">
+                @Model.Description
+            </div>
+            <div class="centered">
+                <h3 class="badge">@Model.Calories руб</h3>
+            </div>
+            <div class="centered">
+                <a href=@Url.Action("AddToCart",
+                      "Cart",
+                      new
+                      {
+                          id =Model.DishId, returnUrl=Request.Path
+                      } )
+                   class="btn btn-primary">
+                    <span class="glyphicon glyphicon-shoppingcart">
+                    </span>
+                    В корзину
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿@model _70325_Dolbik_Vorobei.Models.PageListViewModel<_70325_Dolbik_Vorobei.DAL.Dish>
+@using System.Text;
+@{
+    ViewBag.Title = "List";
+}
+<h2>Список</h2>
+<div id="List">
+    @Html.Partial("ListPartial", Model)
+</div>
+
+@section SidePanel
+    {
+    @Html.Action("Side", "Menu")
+}

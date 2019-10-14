@@ -1,0 +1,12 @@
+﻿@model _70325_Dolbik_Vorobei.Models.Cart
+
+@{
+    ViewBag.Title = "CartSummary";
+}
+
+<div class="nav navbar-right">
+    <a href=@Url.Action("Index","Cart",new {returnUrl=Request.Path })>
+        @Model.GetTotal() руб ( @Model.GetItems().Sum(i => i.Quantity) )
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+    </a>
+</div>
